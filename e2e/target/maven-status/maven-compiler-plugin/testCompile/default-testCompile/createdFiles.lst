@@ -1,0 +1,9 @@
+com/selimhorri/app/e2e/PerformanceAndLoadE2ETest$BenchmarkResult.class
+com/selimhorri/app/e2e/ErrorHandlingAndResilienceE2ETest.class
+com/selimhorri/app/e2e/PerformanceAndLoadE2ETest$LoadTestResult.class
+com/selimhorri/app/e2e/PerformanceAndLoadE2ETest$ThroughputResult.class
+com/selimhorri/app/e2e/ECommerceShoppingFlowE2ETest.class
+com/selimhorri/app/e2e/util/JwtTestHelper.class
+com/selimhorri/app/e2e/PerformanceAndLoadE2ETest.class
+com/selimhorri/app/e2e/UserRegistrationFlowE2ETest.class
+com/selimhorri/app/e2e/MultiServiceIntegrationE2ETest.class

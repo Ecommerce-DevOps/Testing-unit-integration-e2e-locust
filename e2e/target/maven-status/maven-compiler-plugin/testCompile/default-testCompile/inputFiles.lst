@@ -1,0 +1,6 @@
+/home/geoffrey0pv/Projects/2025-2/Ingeosft5/ecommerce-microservice-backend-app/tests/e2e/src/test/java/com/selimhorri/app/e2e/UserRegistrationFlowE2ETest.java
+/home/geoffrey0pv/Projects/2025-2/Ingeosft5/ecommerce-microservice-backend-app/tests/e2e/src/test/java/com/selimhorri/app/e2e/ECommerceShoppingFlowE2ETest.java
+/home/geoffrey0pv/Projects/2025-2/Ingeosft5/ecommerce-microservice-backend-app/tests/e2e/src/test/java/com/selimhorri/app/e2e/MultiServiceIntegrationE2ETest.java
+/home/geoffrey0pv/Projects/2025-2/Ingeosft5/ecommerce-microservice-backend-app/tests/e2e/src/test/java/com/selimhorri/app/e2e/ErrorHandlingAndResilienceE2ETest.java
+/home/geoffrey0pv/Projects/2025-2/Ingeosft5/ecommerce-microservice-backend-app/tests/e2e/src/test/java/com/selimhorri/app/e2e/PerformanceAndLoadE2ETest.java
+/home/geoffrey0pv/Projects/2025-2/Ingeosft5/ecommerce-microservice-backend-app/tests/e2e/src/test/java/com/selimhorri/app/e2e/util/JwtTestHelper.java
