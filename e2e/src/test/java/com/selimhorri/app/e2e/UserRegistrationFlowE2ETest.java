@@ -69,7 +69,8 @@ public class UserRegistrationFlowE2ETest {
         // STEP 1: Register new user
         System.out.println("📝 Step 1: User Registration");
         
-        HttpHeaders headers = createHeadersWithJwt();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         
         HttpEntity<Map<String, Object>> registrationRequest = new HttpEntity<>(testUser, headers);
         
@@ -185,7 +186,8 @@ public class UserRegistrationFlowE2ETest {
     void testDuplicateUserRegistrationPrevention() {
         System.out.println("🛡️ Testing Duplicate Registration Prevention");
         
-        HttpHeaders headers = createHeadersWithJwt();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         
         HttpEntity<Map<String, Object>> request = new HttpEntity<>(testUser, headers);
         
@@ -232,7 +234,8 @@ public class UserRegistrationFlowE2ETest {
     void testUserDataValidation() {
         System.out.println("✅ Testing User Data Validation");
         
-        HttpHeaders headers = createHeadersWithJwt();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
         
         
         // Test with invalid email
