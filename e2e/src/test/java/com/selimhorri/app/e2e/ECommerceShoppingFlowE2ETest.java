@@ -48,16 +48,20 @@ public class ECommerceShoppingFlowE2ETest {
         apiGatewayUrl = System.getProperty("api.gateway.url", "http://localhost:8100");
         uniqueId = UUID.randomUUID().toString().substring(0, 8);
         
-        // Setup test user
+        // Setup test user with nested credential structure
         testUser = new HashMap<>();
         testUser.put("firstName", "Shopper" + uniqueId);
         testUser.put("lastName", "Customer");
         testUser.put("imageUrl", "https://example.com/shopper.jpg");
         testUser.put("email", "shopper" + uniqueId + "@example.com");
         testUser.put("phone", "+1555" + uniqueId.substring(0, 7));
-        testUser.put("username", "shopper" + uniqueId);
-        testUser.put("password", "ShopSecure123!");
-        testUser.put("credentialType", "EMAIL");
+        
+        // Nested credential object
+        Map<String, Object> credential = new HashMap<>();
+        credential.put("username", "shopper" + uniqueId);
+        credential.put("password", "ShopSecure123!");
+        credential.put("roleBasedAuthority", "ROLE_USER");
+        testUser.put("credential", credential);
         
         // Setup test product
         testProduct = new HashMap<>();

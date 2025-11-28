@@ -41,16 +41,20 @@ public class UserRegistrationFlowE2ETest {
         apiGatewayUrl = System.getProperty("api.gateway.url", "http://localhost:8100");
         uniqueId = UUID.randomUUID().toString().substring(0, 8);
         
-        // Setup test user data
+        // Setup test user data with nested credential structure
         testUser = new HashMap<>();
         testUser.put("firstName", "E2ETest" + uniqueId);
         testUser.put("lastName", "User");
         testUser.put("imageUrl", "https://example.com/e2e.jpg");
         testUser.put("email", "e2etest" + uniqueId + "@example.com");
         testUser.put("phone", "+1555" + uniqueId.substring(0, 7));
-        testUser.put("username", "e2etest" + uniqueId);
-        testUser.put("password", "E2ETest123!");
-        testUser.put("credentialType", "EMAIL");
+        
+        // Credential as nested object
+        Map<String, Object> credential = new HashMap<>();
+        credential.put("username", "e2etest" + uniqueId);
+        credential.put("password", "E2ETest123!");
+        credential.put("roleBasedAuthority", "ROLE_USER");
+        testUser.put("credential", credential);
     }
     
     private HttpHeaders createHeadersWithJwt() {
@@ -136,8 +140,12 @@ public class UserRegistrationFlowE2ETest {
         updateData.put("lastName", "UpdatedUser");
         updateData.put("email", testUser.get("email")); // Keep original email
         updateData.put("phone", "+1999" + uniqueId.substring(0, 7));
-        updateData.put("username", testUser.get("username"));
         updateData.put("imageUrl", "https://example.com/updated_avatar.jpg");
+        
+        // Include credential data (required by backend)
+        @SuppressWarnings("unchecked")
+        Map<String, Object> originalCredential = (Map<String, Object>) testUser.get("credential");
+        updateData.put("credential", originalCredential);
         
         HttpEntity<Map<String, Object>> updateRequest = new HttpEntity<>(updateData, headers);
         

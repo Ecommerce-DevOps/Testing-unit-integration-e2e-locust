@@ -78,8 +78,12 @@ public class ErrorHandlingAndResilienceE2ETest {
         invalidEmailUser.put("firstName", "Test");
         invalidEmailUser.put("lastName", "User");
         invalidEmailUser.put("email", "invalid-email-format");
-        invalidEmailUser.put("username", "testuser");
-        invalidEmailUser.put("password", "password123");
+        
+        Map<String, Object> invalidCred = new HashMap<>();
+        invalidCred.put("username", "testuser");
+        invalidCred.put("password", "password123");
+        invalidCred.put("roleBasedAuthority", "ROLE_USER");
+        invalidEmailUser.put("credential", invalidCred);
 
         ResponseEntity<Map> invalidEmailResponse = restTemplate.postForEntity(
                 baseUrl + "/user-service/api/users",
@@ -296,19 +300,22 @@ public class ErrorHandlingAndResilienceE2ETest {
         Integer productId = (Integer) productResponse.getBody().get("productId");
 
         // Test concurrent updates
+        @SuppressWarnings("unchecked")
+        Map<String, Object> originalCred = (Map<String, Object>) userRequest.get("credential");
+        
         Map<String, Object> updateRequest1 = new HashMap<>();
         updateRequest1.put("userId", userId);
         updateRequest1.put("firstName", "UpdatedFirstName1");
         updateRequest1.put("lastName", "UpdatedLastName1");
         updateRequest1.put("email", userRequest.get("email"));
-        updateRequest1.put("username", userRequest.get("username"));
+        updateRequest1.put("credential", originalCred);
 
         Map<String, Object> updateRequest2 = new HashMap<>();
         updateRequest2.put("userId", userId);
         updateRequest2.put("firstName", "UpdatedFirstName2");
         updateRequest2.put("lastName", "UpdatedLastName2");
         updateRequest2.put("email", userRequest.get("email"));
-        updateRequest2.put("username", userRequest.get("username"));
+        updateRequest2.put("credential", originalCred);
 
         // Execute concurrent updates
         ResponseEntity<Map> update1 = restTemplate.exchange(
@@ -345,8 +352,12 @@ public class ErrorHandlingAndResilienceE2ETest {
         longStringUser.put("firstName", "A".repeat(1000)); // Very long name
         longStringUser.put("lastName", "User");
         longStringUser.put("email", "longstring@test.com");
-        longStringUser.put("username", "longstringuser");
-        longStringUser.put("password", "password123");
+        
+        Map<String, Object> longCred = new HashMap<>();
+        longCred.put("username", "longstringuser");
+        longCred.put("password", "password123");
+        longCred.put("roleBasedAuthority", "ROLE_USER");
+        longStringUser.put("credential", longCred);
 
         ResponseEntity<Map> longStringResponse = restTemplate.postForEntity(
                 baseUrl + "/user-service/api/users",
@@ -385,8 +396,12 @@ public class ErrorHandlingAndResilienceE2ETest {
         maliciousUser.put("firstName", "'; DROP TABLE users; --");
         maliciousUser.put("lastName", "<script>alert('xss')</script>");
         maliciousUser.put("email", "malicious@test.com");
-        maliciousUser.put("username", "malicioususer");
-        maliciousUser.put("password", "password123");
+        
+        Map<String, Object> malCred = new HashMap<>();
+        malCred.put("username", "malicioususer");
+        malCred.put("password", "password123");
+        malCred.put("roleBasedAuthority", "ROLE_USER");
+        maliciousUser.put("credential", malCred);
 
         ResponseEntity<Map> maliciousResponse = restTemplate.postForEntity(
                 baseUrl + "/user-service/api/users",
@@ -528,9 +543,14 @@ public class ErrorHandlingAndResilienceE2ETest {
         userRequest.put("imageUrl", "https://example.com/error.jpg");
         userRequest.put("email", namePrefix.toLowerCase() + uniqueId + "@errortest.com");
         userRequest.put("phone", "+1555" + uniqueId.substring(0, 7));
-        userRequest.put("username", namePrefix.toLowerCase() + uniqueId);
-        userRequest.put("password", "ErrorTest123!");
-        userRequest.put("credentialType", "EMAIL");
+        
+        // Nested credential object
+        Map<String, Object> credential = new HashMap<>();
+        credential.put("username", namePrefix.toLowerCase() + uniqueId);
+        credential.put("password", "ErrorTest123!");
+        credential.put("roleBasedAuthority", "ROLE_USER");
+        userRequest.put("credential", credential);
+        
         return userRequest;
     }
 

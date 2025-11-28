@@ -709,9 +709,14 @@ public class PerformanceAndLoadE2ETest {
         userRequest.put("imageUrl", "https://example.com/perf.jpg");
         userRequest.put("email", namePrefix.toLowerCase() + uniqueId + "@perftest.com");
         userRequest.put("phone", "+1555" + uniqueId.substring(0, 7));
-        userRequest.put("username", namePrefix.toLowerCase() + uniqueId);
-        userRequest.put("password", "PerfTest123!");
-        userRequest.put("credentialType", "EMAIL");
+        
+        // Nested credential object
+        Map<String, Object> credential = new HashMap<>();
+        credential.put("username", namePrefix.toLowerCase() + uniqueId);
+        credential.put("password", "PerfTest123!");
+        credential.put("roleBasedAuthority", "ROLE_USER");
+        userRequest.put("credential", credential);
+        
         return userRequest;
     }
 
