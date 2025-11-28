@@ -140,8 +140,10 @@ public class ErrorHandlingAndResilienceE2ETest {
         System.out.println("🔍 Testing Resource Not Found Handling");
 
         // Test non-existent user
-        ResponseEntity<Map> nonExistentUser = restTemplate.getForEntity(
+        ResponseEntity<Map> nonExistentUser = restTemplate.exchange(
                 baseUrl + "/app/user-service/api/users/999999",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 Map.class
         );
 
@@ -149,8 +151,10 @@ public class ErrorHandlingAndResilienceE2ETest {
         System.out.println("✅ Non-existent user returns 404");
 
         // Test non-existent product
-        ResponseEntity<Map> nonExistentProduct = restTemplate.getForEntity(
+        ResponseEntity<Map> nonExistentProduct = restTemplate.exchange(
                 baseUrl + "/app/product-service/api/products/999999",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 Map.class
         );
 
@@ -158,8 +162,10 @@ public class ErrorHandlingAndResilienceE2ETest {
         System.out.println("✅ Non-existent product returns 404");
 
         // Test non-existent cart
-        ResponseEntity<Map> nonExistentCart = restTemplate.getForEntity(
+        ResponseEntity<Map> nonExistentCart = restTemplate.exchange(
                 baseUrl + "/app/order-service/api/carts/999999",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 Map.class
         );
 
@@ -167,8 +173,10 @@ public class ErrorHandlingAndResilienceE2ETest {
         System.out.println("✅ Non-existent cart returns 404");
 
         // Test non-existent order
-        ResponseEntity<Map> nonExistentOrder = restTemplate.getForEntity(
+        ResponseEntity<Map> nonExistentOrder = restTemplate.exchange(
                 baseUrl + "/app/order-service/api/orders/999999",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 Map.class
         );
 
@@ -394,8 +402,10 @@ public class ErrorHandlingAndResilienceE2ETest {
         if (maliciousResponse.getStatusCode().is2xxSuccessful()) {
             // If accepted, verify data was sanitized
             Integer userId = (Integer) maliciousResponse.getBody().get("userId");
-            ResponseEntity<Map> retrievedUser = restTemplate.getForEntity(
+            ResponseEntity<Map> retrievedUser = restTemplate.exchange(
                     baseUrl + "/app/user-service/api/users/" + userId,
+                    HttpMethod.GET,
+                    createJsonEntity(null, true),
                     Map.class
             );
 
@@ -419,8 +429,10 @@ public class ErrorHandlingAndResilienceE2ETest {
         long startTime = System.currentTimeMillis();
 
         // Test basic response times
-        ResponseEntity<List> usersResponse = restTemplate.getForEntity(
+        ResponseEntity<List> usersResponse = restTemplate.exchange(
                 baseUrl + "/app/user-service/api/users",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 List.class
         );
 
@@ -433,8 +445,10 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test product list response time
         startTime = System.currentTimeMillis();
-        ResponseEntity<List> productsResponse = restTemplate.getForEntity(
+        ResponseEntity<List> productsResponse = restTemplate.exchange(
                 baseUrl + "/app/product-service/api/products",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 List.class
         );
 
@@ -447,8 +461,10 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test order list response time
         startTime = System.currentTimeMillis();
-        ResponseEntity<List> ordersResponse = restTemplate.getForEntity(
+        ResponseEntity<List> ordersResponse = restTemplate.exchange(
                 baseUrl + "/app/order-service/api/orders",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 List.class
         );
 
@@ -468,8 +484,10 @@ public class ErrorHandlingAndResilienceE2ETest {
         System.out.println("📝 Testing Error Response Formats");
 
         // Test error response structure for 404
-        ResponseEntity<Map> notFoundResponse = restTemplate.getForEntity(
+        ResponseEntity<Map> notFoundResponse = restTemplate.exchange(
                 baseUrl + "/app/user-service/api/users/999999",
+                HttpMethod.GET,
+                createJsonEntity(null, true),
                 Map.class
         );
 
