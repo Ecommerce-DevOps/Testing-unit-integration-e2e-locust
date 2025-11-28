@@ -64,7 +64,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         ResponseEntity<Map> emptyUserResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(emptyUser),
+                createJsonEntity(emptyUser, false),
                 Map.class
         );
 
@@ -83,7 +83,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         ResponseEntity<Map> invalidEmailResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(invalidEmailUser),
+                createJsonEntity(invalidEmailUser, false),
                 Map.class
         );
 
@@ -185,7 +185,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         Map<String, Object> validUser = createValidUserRequest("BusinessLogicUser");
         ResponseEntity<Map> userResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(validUser),
+                createJsonEntity(validUser, false),
                 Map.class
         );
 
@@ -213,7 +213,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         // Test 2: Duplicate user registration (business rule)
         ResponseEntity<Map> duplicateUserResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(validUser), // Same user data
+                createJsonEntity(validUser, false), // Same user data
                 Map.class
         );
 
@@ -269,7 +269,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         Map<String, Object> userRequest = createValidUserRequest("ConcurrentUser");
         ResponseEntity<Map> userResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(userRequest),
+                createJsonEntity(userRequest, false),
                 Map.class
         );
 
@@ -342,7 +342,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         ResponseEntity<Map> longStringResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(longStringUser),
+                createJsonEntity(longStringUser, false),
                 Map.class
         );
 
@@ -382,7 +382,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         ResponseEntity<Map> maliciousResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(maliciousUser),
+                createJsonEntity(maliciousUser, false),
                 Map.class
         );
 
@@ -486,7 +486,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         ResponseEntity<Map> badRequestResponse = restTemplate.postForEntity(
                 baseUrl + "/app/user-service/api/users",
-                createJsonEntity(invalidData),
+                createJsonEntity(invalidData, false),
                 Map.class
         );
 
@@ -531,9 +531,14 @@ public class ErrorHandlingAndResilienceE2ETest {
     }
 
     private HttpEntity<String> createJsonEntity(Map<String, Object> body) {
+        return createJsonEntity(body, true);
+    }
+
+    private HttpEntity<String> createJsonEntity(Map<String, Object> body, boolean includeToken) {
         try {
             String json = objectMapper.writeValueAsString(body);
-            HttpHeaders headers = createHeadersWithJwt();
+            HttpHeaders headers = includeToken ? createHeadersWithJwt() : new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
             return new HttpEntity<>(json, headers);
         } catch (Exception e) {
             throw new RuntimeException("Failed to create JSON entity", e);
