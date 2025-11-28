@@ -127,8 +127,11 @@ public class ECommerceShoppingFlowE2ETest {
         System.out.println("✅ Product created: " + productId);
         
         // Verify product can be retrieved (browse functionality)
-        ResponseEntity<String> getProductResponse = restTemplate.getForEntity(
+        HttpEntity<Void> getRequest = new HttpEntity<>(headers);
+        ResponseEntity<String> getProductResponse = restTemplate.exchange(
                 apiGatewayUrl + "/app/product-service/api/products/" + productId,
+                HttpMethod.GET,
+                getRequest,
                 String.class
         );
         
@@ -165,8 +168,11 @@ public class ECommerceShoppingFlowE2ETest {
         System.out.println("✅ Shopping cart created: " + cartId);
         
         // Verify cart can be retrieved
-        ResponseEntity<String> getCartResponse = restTemplate.getForEntity(
+        HttpEntity<Void> getCartRequest = new HttpEntity<>(headers);
+        ResponseEntity<String> getCartResponse = restTemplate.exchange(
                 apiGatewayUrl + "/app/order-service/api/carts/" + cartId,
+                HttpMethod.GET,
+                getCartRequest,
                 String.class
         );
         
@@ -202,8 +208,11 @@ public class ECommerceShoppingFlowE2ETest {
         // STEP 5: Order Verification
         System.out.println("🔍 Step 5: Order Details Verification");
         
-        ResponseEntity<String> getOrderResponse = restTemplate.getForEntity(
+        HttpEntity<Void> getOrderRequest = new HttpEntity<>(headers);
+        ResponseEntity<String> getOrderResponse = restTemplate.exchange(
                 apiGatewayUrl + "/app/order-service/api/orders/" + orderId,
+                HttpMethod.GET,
+                getOrderRequest,
                 String.class
         );
         
@@ -228,8 +237,11 @@ public class ECommerceShoppingFlowE2ETest {
         // STEP 6: Order History Verification
         System.out.println("📋 Step 6: Order History Check");
         
-        ResponseEntity<String> orderHistoryResponse = restTemplate.getForEntity(
+        HttpEntity<Void> historyRequest = new HttpEntity<>(headers);
+        ResponseEntity<String> orderHistoryResponse = restTemplate.exchange(
                 apiGatewayUrl + "/app/order-service/api/orders",
+                HttpMethod.GET,
+                historyRequest,
                 String.class
         );
         
@@ -291,8 +303,11 @@ public class ECommerceShoppingFlowE2ETest {
         String productId = productData.get("productId").asText();
         
         // Verify initial inventory
-        ResponseEntity<String> getProductResponse = restTemplate.getForEntity(
+        HttpEntity<Void> getProductRequest = new HttpEntity<>(headers);
+        ResponseEntity<String> getProductResponse = restTemplate.exchange(
                 apiGatewayUrl + "/app/product-service/api/products/" + productId,
+                HttpMethod.GET,
+                getProductRequest,
                 String.class
         );
         
@@ -327,8 +342,11 @@ public class ECommerceShoppingFlowE2ETest {
         assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
         
         // Verify inventory was updated
-        ResponseEntity<String> finalCheckResponse = restTemplate.getForEntity(
+        HttpEntity<Void> finalCheckRequest = new HttpEntity<>(headers);
+        ResponseEntity<String> finalCheckResponse = restTemplate.exchange(
                 apiGatewayUrl + "/app/product-service/api/products/" + productId,
+                HttpMethod.GET,
+                finalCheckRequest,
                 String.class
         );
         
@@ -410,8 +428,11 @@ public class ECommerceShoppingFlowE2ETest {
         assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
         
         // Verify update
-        ResponseEntity<String> finalOrderResponse = restTemplate.getForEntity(
+        HttpEntity<Void> finalOrderRequest = new HttpEntity<>(headers);
+        ResponseEntity<String> finalOrderResponse = restTemplate.exchange(
                 apiGatewayUrl + "/app/order-service/api/orders/" + orderId,
+                HttpMethod.GET,
+                finalOrderRequest,
                 String.class
         );
         assertThat(finalOrderResponse.getStatusCode()).isEqualTo(HttpStatus.OK);

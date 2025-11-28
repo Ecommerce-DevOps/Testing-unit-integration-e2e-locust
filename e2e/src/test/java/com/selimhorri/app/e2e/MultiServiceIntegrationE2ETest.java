@@ -206,8 +206,10 @@ public class MultiServiceIntegrationE2ETest {
         System.out.println("✅ Invalid user creation properly rejected");
 
         // Test 2: Non-existent resource access
-        ResponseEntity<Map> nonExistentUser = restTemplate.getForEntity(
+        ResponseEntity<Map> nonExistentUser = restTemplate.exchange(
                 baseUrl + "/app/user-service/api/users/99999",
+                HttpMethod.GET,
+                createJsonEntity(null),
                 Map.class
         );
 
@@ -277,32 +279,40 @@ public class MultiServiceIntegrationE2ETest {
 
         // Verify data integrity
         // 1. User still exists and is correct
-        ResponseEntity<Map> userCheck = restTemplate.getForEntity(
+        ResponseEntity<Map> userCheck = restTemplate.exchange(
                 baseUrl + "/app/user-service/api/users/" + userId,
+                HttpMethod.GET,
+                createJsonEntity(null),
                 Map.class
         );
         assertThat(userCheck.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(userCheck.getBody().get("firstName")).isEqualTo("IntegrityTestUser");
 
         // 2. Product still exists and is correct
-        ResponseEntity<Map> productCheck = restTemplate.getForEntity(
+        ResponseEntity<Map> productCheck = restTemplate.exchange(
                 baseUrl + "/app/product-service/api/products/" + productId,
+                HttpMethod.GET,
+                createJsonEntity(null),
                 Map.class
         );
         assertThat(productCheck.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(productCheck.getBody().get("productTitle")).isEqualTo("IntegrityTestProduct");
 
         // 3. Cart still exists and belongs to correct user
-        ResponseEntity<Map> cartCheck = restTemplate.getForEntity(
+        ResponseEntity<Map> cartCheck = restTemplate.exchange(
                 baseUrl + "/app/order-service/api/carts/" + cartId,
+                HttpMethod.GET,
+                createJsonEntity(null),
                 Map.class
         );
         assertThat(cartCheck.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(cartCheck.getBody().get("userId")).isEqualTo(userId);
 
         // 4. Order exists and references correct cart
-        ResponseEntity<Map> orderCheck = restTemplate.getForEntity(
+        ResponseEntity<Map> orderCheck = restTemplate.exchange(
                 baseUrl + "/app/order-service/api/orders/" + orderId,
+                HttpMethod.GET,
+                createJsonEntity(null),
                 Map.class
         );
         assertThat(orderCheck.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -339,15 +349,19 @@ public class MultiServiceIntegrationE2ETest {
         // Verify bulk retrieval operations
         System.out.println("Verifying bulk data retrieval...");
         
-        ResponseEntity<List> allUsers = restTemplate.getForEntity(
+        ResponseEntity<List> allUsers = restTemplate.exchange(
                 baseUrl + "/app/user-service/api/users",
+                HttpMethod.GET,
+                createJsonEntity(null),
                 List.class
         );
         assertThat(allUsers.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(allUsers.getBody()).hasSizeGreaterThanOrEqualTo(BULK_SIZE);
 
-        ResponseEntity<List> allProducts = restTemplate.getForEntity(
+        ResponseEntity<List> allProducts = restTemplate.exchange(
                 baseUrl + "/app/product-service/api/products",
+                HttpMethod.GET,
+                createJsonEntity(null),
                 List.class
         );
         assertThat(allProducts.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -437,8 +451,10 @@ public class MultiServiceIntegrationE2ETest {
     private void verifyDataConsistency() {
         // Verify all created users still exist
         for (Integer userId : createdUserIds) {
-            ResponseEntity<Map> userResponse = restTemplate.getForEntity(
+            ResponseEntity<Map> userResponse = restTemplate.exchange(
                     baseUrl + "/app/user-service/api/users/" + userId,
+                    HttpMethod.GET,
+                    createJsonEntity(null),
                     Map.class
             );
             assertThat(userResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -446,8 +462,10 @@ public class MultiServiceIntegrationE2ETest {
 
         // Verify all created products still exist
         for (Integer productId : createdProductIds) {
-            ResponseEntity<Map> productResponse = restTemplate.getForEntity(
+            ResponseEntity<Map> productResponse = restTemplate.exchange(
                     baseUrl + "/app/product-service/api/products/" + productId,
+                    HttpMethod.GET,
+                    createJsonEntity(null),
                     Map.class
             );
             assertThat(productResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -455,8 +473,10 @@ public class MultiServiceIntegrationE2ETest {
 
         // Verify all created carts still exist
         for (Integer cartId : createdCartIds) {
-            ResponseEntity<Map> cartResponse = restTemplate.getForEntity(
+            ResponseEntity<Map> cartResponse = restTemplate.exchange(
                     baseUrl + "/app/order-service/api/carts/" + cartId,
+                    HttpMethod.GET,
+                    createJsonEntity(null),
                     Map.class
             );
             assertThat(cartResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -464,8 +484,10 @@ public class MultiServiceIntegrationE2ETest {
 
         // Verify all created orders still exist
         for (Integer orderId : createdOrderIds) {
-            ResponseEntity<Map> orderResponse = restTemplate.getForEntity(
+            ResponseEntity<Map> orderResponse = restTemplate.exchange(
                     baseUrl + "/app/order-service/api/orders/" + orderId,
+                    HttpMethod.GET,
+                    createJsonEntity(null),
                     Map.class
             );
             assertThat(orderResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
