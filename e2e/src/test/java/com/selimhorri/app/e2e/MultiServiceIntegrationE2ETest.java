@@ -85,7 +85,7 @@ public class MultiServiceIntegrationE2ETest {
             cartRequest.put("userId", userId);
 
             ResponseEntity<Map> cartResponse = restTemplate.postForEntity(
-                    baseUrl + "/app/order-service/api/carts",
+                    baseUrl + "/order-service/api/carts",
                     createJsonEntity(cartRequest),
                     Map.class
             );
@@ -110,7 +110,7 @@ public class MultiServiceIntegrationE2ETest {
             orderRequest.put("cartId", cartId);
 
             ResponseEntity<Map> orderResponse = restTemplate.postForEntity(
-                    baseUrl + "/app/order-service/api/orders",
+                    baseUrl + "/order-service/api/orders",
                     createJsonEntity(orderRequest),
                     Map.class
             );
@@ -146,7 +146,7 @@ public class MultiServiceIntegrationE2ETest {
                 Map<String, Object> userRequest = createUserRequest("ConcurrentUser" + userIndex);
                 
                 ResponseEntity<Map> response = restTemplate.postForEntity(
-                        baseUrl + "/app/user-service/api/users",
+                        baseUrl + "/user-service/api/users",
                         createJsonEntity(userRequest),
                         Map.class
                 );
@@ -165,7 +165,7 @@ public class MultiServiceIntegrationE2ETest {
                 Map<String, Object> productRequest = createProductRequest("ConcurrentProduct" + productIndex);
                 
                 ResponseEntity<Map> response = restTemplate.postForEntity(
-                        baseUrl + "/app/product-service/api/products",
+                        baseUrl + "/product-service/api/products",
                         createJsonEntity(productRequest),
                         Map.class
                 );
@@ -195,7 +195,7 @@ public class MultiServiceIntegrationE2ETest {
         invalidUser.put("email", "invalid-email"); // Invalid email format
 
         ResponseEntity<Map> invalidUserResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(invalidUser),
                 Map.class
         );
@@ -207,7 +207,7 @@ public class MultiServiceIntegrationE2ETest {
 
         // Test 2: Non-existent resource access
         ResponseEntity<Map> nonExistentUser = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users/99999",
+                baseUrl + "/user-service/api/users/99999",
                 HttpMethod.GET,
                 createJsonEntity(null),
                 Map.class
@@ -224,7 +224,7 @@ public class MultiServiceIntegrationE2ETest {
         invalidOrder.put("cartId", 99999); // Non-existent cart
 
         ResponseEntity<Map> invalidOrderResponse = restTemplate.postForEntity(
-                baseUrl + "/app/order-service/api/orders",
+                baseUrl + "/order-service/api/orders",
                 createJsonEntity(invalidOrder),
                 Map.class
         );
@@ -254,7 +254,7 @@ public class MultiServiceIntegrationE2ETest {
         cartRequest.put("userId", userId);
 
         ResponseEntity<Map> cartResponse = restTemplate.postForEntity(
-                baseUrl + "/app/order-service/api/carts",
+                baseUrl + "/order-service/api/carts",
                 createJsonEntity(cartRequest),
                 Map.class
         );
@@ -269,7 +269,7 @@ public class MultiServiceIntegrationE2ETest {
         orderRequest.put("cartId", cartId);
 
         ResponseEntity<Map> orderResponse = restTemplate.postForEntity(
-                baseUrl + "/app/order-service/api/orders",
+                baseUrl + "/order-service/api/orders",
                 createJsonEntity(orderRequest),
                 Map.class
         );
@@ -280,7 +280,7 @@ public class MultiServiceIntegrationE2ETest {
         // Verify data integrity
         // 1. User still exists and is correct
         ResponseEntity<Map> userCheck = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users/" + userId,
+                baseUrl + "/user-service/api/users/" + userId,
                 HttpMethod.GET,
                 createJsonEntity(null),
                 Map.class
@@ -290,7 +290,7 @@ public class MultiServiceIntegrationE2ETest {
 
         // 2. Product still exists and is correct
         ResponseEntity<Map> productCheck = restTemplate.exchange(
-                baseUrl + "/app/product-service/api/products/" + productId,
+                baseUrl + "/product-service/api/products/" + productId,
                 HttpMethod.GET,
                 createJsonEntity(null),
                 Map.class
@@ -300,7 +300,7 @@ public class MultiServiceIntegrationE2ETest {
 
         // 3. Cart still exists and belongs to correct user
         ResponseEntity<Map> cartCheck = restTemplate.exchange(
-                baseUrl + "/app/order-service/api/carts/" + cartId,
+                baseUrl + "/order-service/api/carts/" + cartId,
                 HttpMethod.GET,
                 createJsonEntity(null),
                 Map.class
@@ -310,7 +310,7 @@ public class MultiServiceIntegrationE2ETest {
 
         // 4. Order exists and references correct cart
         ResponseEntity<Map> orderCheck = restTemplate.exchange(
-                baseUrl + "/app/order-service/api/orders/" + orderId,
+                baseUrl + "/order-service/api/orders/" + orderId,
                 HttpMethod.GET,
                 createJsonEntity(null),
                 Map.class
@@ -350,7 +350,7 @@ public class MultiServiceIntegrationE2ETest {
         System.out.println("Verifying bulk data retrieval...");
         
         ResponseEntity<List> allUsers = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 HttpMethod.GET,
                 createJsonEntity(null),
                 List.class
@@ -359,7 +359,7 @@ public class MultiServiceIntegrationE2ETest {
         assertThat(allUsers.getBody()).hasSizeGreaterThanOrEqualTo(BULK_SIZE);
 
         ResponseEntity<List> allProducts = restTemplate.exchange(
-                baseUrl + "/app/product-service/api/products",
+                baseUrl + "/product-service/api/products",
                 HttpMethod.GET,
                 createJsonEntity(null),
                 List.class
@@ -397,7 +397,7 @@ public class MultiServiceIntegrationE2ETest {
         Map<String, Object> userRequest = createUserRequest(namePrefix + uniqueId);
 
         ResponseEntity<Map> response = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(userRequest),
                 Map.class
         );
@@ -411,7 +411,7 @@ public class MultiServiceIntegrationE2ETest {
         Map<String, Object> productRequest = createProductRequest(namePrefix + uniqueId);
 
         ResponseEntity<Map> response = restTemplate.postForEntity(
-                baseUrl + "/app/product-service/api/products",
+                baseUrl + "/product-service/api/products",
                 createJsonEntity(productRequest),
                 Map.class
         );
@@ -452,7 +452,7 @@ public class MultiServiceIntegrationE2ETest {
         // Verify all created users still exist
         for (Integer userId : createdUserIds) {
             ResponseEntity<Map> userResponse = restTemplate.exchange(
-                    baseUrl + "/app/user-service/api/users/" + userId,
+                    baseUrl + "/user-service/api/users/" + userId,
                     HttpMethod.GET,
                     createJsonEntity(null),
                     Map.class
@@ -463,7 +463,7 @@ public class MultiServiceIntegrationE2ETest {
         // Verify all created products still exist
         for (Integer productId : createdProductIds) {
             ResponseEntity<Map> productResponse = restTemplate.exchange(
-                    baseUrl + "/app/product-service/api/products/" + productId,
+                    baseUrl + "/product-service/api/products/" + productId,
                     HttpMethod.GET,
                     createJsonEntity(null),
                     Map.class
@@ -474,7 +474,7 @@ public class MultiServiceIntegrationE2ETest {
         // Verify all created carts still exist
         for (Integer cartId : createdCartIds) {
             ResponseEntity<Map> cartResponse = restTemplate.exchange(
-                    baseUrl + "/app/order-service/api/carts/" + cartId,
+                    baseUrl + "/order-service/api/carts/" + cartId,
                     HttpMethod.GET,
                     createJsonEntity(null),
                     Map.class
@@ -485,7 +485,7 @@ public class MultiServiceIntegrationE2ETest {
         // Verify all created orders still exist
         for (Integer orderId : createdOrderIds) {
             ResponseEntity<Map> orderResponse = restTemplate.exchange(
-                    baseUrl + "/app/order-service/api/orders/" + orderId,
+                    baseUrl + "/order-service/api/orders/" + orderId,
                     HttpMethod.GET,
                     createJsonEntity(null),
                     Map.class

@@ -63,7 +63,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         emptyUser.put("email", "");
 
         ResponseEntity<Map> emptyUserResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(emptyUser, false),
                 Map.class
         );
@@ -82,7 +82,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         invalidEmailUser.put("password", "password123");
 
         ResponseEntity<Map> invalidEmailResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(invalidEmailUser, false),
                 Map.class
         );
@@ -104,7 +104,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         negativePhiceProduct.put("categoryId", 1);
 
         ResponseEntity<Map> negativePriceResponse = restTemplate.postForEntity(
-                baseUrl + "/app/product-service/api/products",
+                baseUrl + "/product-service/api/products",
                 createJsonEntity(negativePhiceProduct),
                 Map.class
         );
@@ -121,7 +121,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         incompleteProduct.put("productTitle", ""); // Empty title
         
         ResponseEntity<Map> incompleteProductResponse = restTemplate.postForEntity(
-                baseUrl + "/app/product-service/api/products",
+                baseUrl + "/product-service/api/products",
                 createJsonEntity(incompleteProduct),
                 Map.class
         );
@@ -141,7 +141,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test non-existent user
         ResponseEntity<Map> nonExistentUser = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users/999999",
+                baseUrl + "/user-service/api/users/999999",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 Map.class
@@ -152,7 +152,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test non-existent product
         ResponseEntity<Map> nonExistentProduct = restTemplate.exchange(
-                baseUrl + "/app/product-service/api/products/999999",
+                baseUrl + "/product-service/api/products/999999",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 Map.class
@@ -163,7 +163,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test non-existent cart
         ResponseEntity<Map> nonExistentCart = restTemplate.exchange(
-                baseUrl + "/app/order-service/api/carts/999999",
+                baseUrl + "/order-service/api/carts/999999",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 Map.class
@@ -174,7 +174,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test non-existent order
         ResponseEntity<Map> nonExistentOrder = restTemplate.exchange(
-                baseUrl + "/app/order-service/api/orders/999999",
+                baseUrl + "/order-service/api/orders/999999",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 Map.class
@@ -192,7 +192,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         // Create valid test user first
         Map<String, Object> validUser = createValidUserRequest("BusinessLogicUser");
         ResponseEntity<Map> userResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(validUser, false),
                 Map.class
         );
@@ -208,7 +208,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         orderWithoutCart.put("cartId", 999999); // Non-existent cart
 
         ResponseEntity<Map> invalidOrderResponse = restTemplate.postForEntity(
-                baseUrl + "/app/order-service/api/orders",
+                baseUrl + "/order-service/api/orders",
                 createJsonEntity(orderWithoutCart),
                 Map.class
         );
@@ -220,7 +220,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test 2: Duplicate user registration (business rule)
         ResponseEntity<Map> duplicateUserResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(validUser, false), // Same user data
                 Map.class
         );
@@ -237,7 +237,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         cartRequest.put("userId", userId);
 
         ResponseEntity<Map> cartResponse = restTemplate.postForEntity(
-                baseUrl + "/app/order-service/api/carts",
+                baseUrl + "/order-service/api/carts",
                 createJsonEntity(cartRequest),
                 Map.class
         );
@@ -253,7 +253,7 @@ public class ErrorHandlingAndResilienceE2ETest {
             negativeOrder.put("cartId", cartId);
 
             ResponseEntity<Map> negativeOrderResponse = restTemplate.postForEntity(
-                    baseUrl + "/app/order-service/api/orders",
+                    baseUrl + "/order-service/api/orders",
                     createJsonEntity(negativeOrder),
                     Map.class
             );
@@ -276,7 +276,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         // Create test data
         Map<String, Object> userRequest = createValidUserRequest("ConcurrentUser");
         ResponseEntity<Map> userResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(userRequest, false),
                 Map.class
         );
@@ -287,7 +287,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         // Create product for concurrent modification
         Map<String, Object> productRequest = createValidProductRequest("ConcurrentProduct");
         ResponseEntity<Map> productResponse = restTemplate.postForEntity(
-                baseUrl + "/app/product-service/api/products",
+                baseUrl + "/product-service/api/products",
                 createJsonEntity(productRequest),
                 Map.class
         );
@@ -312,14 +312,14 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Execute concurrent updates
         ResponseEntity<Map> update1 = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 HttpMethod.PUT,
                 createJsonEntity(updateRequest1),
                 Map.class
         );
 
         ResponseEntity<Map> update2 = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 HttpMethod.PUT,
                 createJsonEntity(updateRequest2),
                 Map.class
@@ -349,7 +349,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         longStringUser.put("password", "password123");
 
         ResponseEntity<Map> longStringResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(longStringUser, false),
                 Map.class
         );
@@ -369,7 +369,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         extremeProduct.put("categoryId", 1);
 
         ResponseEntity<Map> extremeProductResponse = restTemplate.postForEntity(
-                baseUrl + "/app/product-service/api/products",
+                baseUrl + "/product-service/api/products",
                 createJsonEntity(extremeProduct),
                 Map.class
         );
@@ -389,7 +389,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         maliciousUser.put("password", "password123");
 
         ResponseEntity<Map> maliciousResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(maliciousUser, false),
                 Map.class
         );
@@ -403,7 +403,7 @@ public class ErrorHandlingAndResilienceE2ETest {
             // If accepted, verify data was sanitized
             Integer userId = (Integer) maliciousResponse.getBody().get("userId");
             ResponseEntity<Map> retrievedUser = restTemplate.exchange(
-                    baseUrl + "/app/user-service/api/users/" + userId,
+                    baseUrl + "/user-service/api/users/" + userId,
                     HttpMethod.GET,
                     createJsonEntity(null, true),
                     Map.class
@@ -430,7 +430,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test basic response times
         ResponseEntity<List> usersResponse = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 List.class
@@ -446,7 +446,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         // Test product list response time
         startTime = System.currentTimeMillis();
         ResponseEntity<List> productsResponse = restTemplate.exchange(
-                baseUrl + "/app/product-service/api/products",
+                baseUrl + "/product-service/api/products",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 List.class
@@ -462,7 +462,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         // Test order list response time
         startTime = System.currentTimeMillis();
         ResponseEntity<List> ordersResponse = restTemplate.exchange(
-                baseUrl + "/app/order-service/api/orders",
+                baseUrl + "/order-service/api/orders",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 List.class
@@ -485,7 +485,7 @@ public class ErrorHandlingAndResilienceE2ETest {
 
         // Test error response structure for 404
         ResponseEntity<Map> notFoundResponse = restTemplate.exchange(
-                baseUrl + "/app/user-service/api/users/999999",
+                baseUrl + "/user-service/api/users/999999",
                 HttpMethod.GET,
                 createJsonEntity(null, true),
                 Map.class
@@ -503,7 +503,7 @@ public class ErrorHandlingAndResilienceE2ETest {
         invalidData.put("invalid", "data");
 
         ResponseEntity<Map> badRequestResponse = restTemplate.postForEntity(
-                baseUrl + "/app/user-service/api/users",
+                baseUrl + "/user-service/api/users",
                 createJsonEntity(invalidData, false),
                 Map.class
         );

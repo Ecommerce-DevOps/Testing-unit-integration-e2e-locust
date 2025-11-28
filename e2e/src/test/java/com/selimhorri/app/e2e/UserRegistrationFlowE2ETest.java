@@ -75,7 +75,7 @@ public class UserRegistrationFlowE2ETest {
         HttpEntity<Map<String, Object>> registrationRequest = new HttpEntity<>(testUser, headers);
         
         ResponseEntity<String> registrationResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/user-service/api/users",
+                apiGatewayUrl + "/user-service/api/users",
                 registrationRequest,
                 String.class
         );
@@ -108,7 +108,7 @@ public class UserRegistrationFlowE2ETest {
         System.out.println("🔍 Step 2: User Retrieval Verification");
         
         ResponseEntity<String> getUserResponse = restTemplate.getForEntity(
-                apiGatewayUrl + "/app/user-service/api/users/" + userId,
+                apiGatewayUrl + "/user-service/api/users/" + userId,
                 String.class
         );
         
@@ -142,7 +142,7 @@ public class UserRegistrationFlowE2ETest {
         HttpEntity<Map<String, Object>> updateRequest = new HttpEntity<>(updateData, headers);
         
         ResponseEntity<String> updateResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/user-service/api/users",
+                apiGatewayUrl + "/user-service/api/users",
                 HttpMethod.PUT,
                 updateRequest,
                 String.class
@@ -156,7 +156,7 @@ public class UserRegistrationFlowE2ETest {
         System.out.println("🔍 Step 4: Update Verification");
         
         ResponseEntity<String> getUpdatedResponse = restTemplate.getForEntity(
-                apiGatewayUrl + "/app/user-service/api/users/" + userId,
+                apiGatewayUrl + "/user-service/api/users/" + userId,
                 String.class
         );
         
@@ -193,7 +193,7 @@ public class UserRegistrationFlowE2ETest {
         
         // First registration should succeed
         ResponseEntity<String> firstResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/user-service/api/users",
+                apiGatewayUrl + "/user-service/api/users",
                 request,
                 String.class
         );
@@ -207,7 +207,7 @@ public class UserRegistrationFlowE2ETest {
         // Second registration with same data should fail
         try {
             ResponseEntity<String> duplicateResponse = restTemplate.postForEntity(
-                    apiGatewayUrl + "/app/user-service/api/users",
+                    apiGatewayUrl + "/user-service/api/users",
                     request,
                     String.class
             );
@@ -246,7 +246,7 @@ public class UserRegistrationFlowE2ETest {
         
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(
-                    apiGatewayUrl + "/app/user-service/api/users",
+                    apiGatewayUrl + "/user-service/api/users",
                     invalidRequest,
                     String.class
             );
@@ -274,7 +274,7 @@ public class UserRegistrationFlowE2ETest {
         
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(
-                    apiGatewayUrl + "/app/user-service/api/users",
+                    apiGatewayUrl + "/user-service/api/users",
                     incompleteRequest,
                     String.class
             );

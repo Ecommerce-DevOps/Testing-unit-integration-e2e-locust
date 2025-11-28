@@ -91,7 +91,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> userRequest = new HttpEntity<>(testUser, headers);
         ResponseEntity<String> userResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/user-service/api/users",
+                apiGatewayUrl + "/user-service/api/users",
                 userRequest,
                 String.class
         );
@@ -111,7 +111,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> productRequest = new HttpEntity<>(testProduct, headers);
         ResponseEntity<String> productResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/product-service/api/products",
+                apiGatewayUrl + "/product-service/api/products",
                 productRequest,
                 String.class
         );
@@ -129,7 +129,7 @@ public class ECommerceShoppingFlowE2ETest {
         // Verify product can be retrieved (browse functionality)
         HttpEntity<Void> getRequest = new HttpEntity<>(headers);
         ResponseEntity<String> getProductResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/product-service/api/products/" + productId,
+                apiGatewayUrl + "/product-service/api/products/" + productId,
                 HttpMethod.GET,
                 getRequest,
                 String.class
@@ -152,7 +152,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> cartRequest = new HttpEntity<>(cartData, headers);
         ResponseEntity<String> cartResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/order-service/api/carts",
+                apiGatewayUrl + "/order-service/api/carts",
                 cartRequest,
                 String.class
         );
@@ -170,7 +170,7 @@ public class ECommerceShoppingFlowE2ETest {
         // Verify cart can be retrieved
         HttpEntity<Void> getCartRequest = new HttpEntity<>(headers);
         ResponseEntity<String> getCartResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/order-service/api/carts/" + cartId,
+                apiGatewayUrl + "/order-service/api/carts/" + cartId,
                 HttpMethod.GET,
                 getCartRequest,
                 String.class
@@ -190,7 +190,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> orderRequest = new HttpEntity<>(orderData, headers);
         ResponseEntity<String> orderResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/order-service/api/orders",
+                apiGatewayUrl + "/order-service/api/orders",
                 orderRequest,
                 String.class
         );
@@ -210,7 +210,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Void> getOrderRequest = new HttpEntity<>(headers);
         ResponseEntity<String> getOrderResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/order-service/api/orders/" + orderId,
+                apiGatewayUrl + "/order-service/api/orders/" + orderId,
                 HttpMethod.GET,
                 getOrderRequest,
                 String.class
@@ -239,7 +239,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Void> historyRequest = new HttpEntity<>(headers);
         ResponseEntity<String> orderHistoryResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/order-service/api/orders",
+                apiGatewayUrl + "/order-service/api/orders",
                 HttpMethod.GET,
                 historyRequest,
                 String.class
@@ -292,7 +292,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> productRequest = new HttpEntity<>(limitedProduct, headers);
         ResponseEntity<String> productResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/product-service/api/products",
+                apiGatewayUrl + "/product-service/api/products",
                 productRequest,
                 String.class
         );
@@ -305,7 +305,7 @@ public class ECommerceShoppingFlowE2ETest {
         // Verify initial inventory
         HttpEntity<Void> getProductRequest = new HttpEntity<>(headers);
         ResponseEntity<String> getProductResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/product-service/api/products/" + productId,
+                apiGatewayUrl + "/product-service/api/products/" + productId,
                 HttpMethod.GET,
                 getProductRequest,
                 String.class
@@ -333,7 +333,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> updateRequest = new HttpEntity<>(updatedProduct, headers);
         ResponseEntity<String> updateResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/product-service/api/products",
+                apiGatewayUrl + "/product-service/api/products",
                 HttpMethod.PUT,
                 updateRequest,
                 String.class
@@ -344,7 +344,7 @@ public class ECommerceShoppingFlowE2ETest {
         // Verify inventory was updated
         HttpEntity<Void> finalCheckRequest = new HttpEntity<>(headers);
         ResponseEntity<String> finalCheckResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/product-service/api/products/" + productId,
+                apiGatewayUrl + "/product-service/api/products/" + productId,
                 HttpMethod.GET,
                 finalCheckRequest,
                 String.class
@@ -372,7 +372,7 @@ public class ECommerceShoppingFlowE2ETest {
         // Create minimal setup for order
         HttpEntity<Map<String, Object>> userRequest = new HttpEntity<>(testUser, headers);
         ResponseEntity<String> userResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/user-service/api/users",
+                apiGatewayUrl + "/user-service/api/users",
                 userRequest,
                 String.class
         );
@@ -384,7 +384,7 @@ public class ECommerceShoppingFlowE2ETest {
         cartData.put("userId", userId);
         HttpEntity<Map<String, Object>> cartRequest = new HttpEntity<>(cartData, headers);
         ResponseEntity<String> cartResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/order-service/api/carts",
+                apiGatewayUrl + "/order-service/api/carts",
                 cartRequest,
                 String.class
         );
@@ -401,7 +401,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> orderRequest = new HttpEntity<>(orderData, headers);
         ResponseEntity<String> orderResponse = restTemplate.postForEntity(
-                apiGatewayUrl + "/app/order-service/api/orders",
+                apiGatewayUrl + "/order-service/api/orders",
                 orderRequest,
                 String.class
         );
@@ -419,7 +419,7 @@ public class ECommerceShoppingFlowE2ETest {
         
         HttpEntity<Map<String, Object>> updateRequest = new HttpEntity<>(updatedOrder, headers);
         ResponseEntity<String> updateResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/order-service/api/orders",
+                apiGatewayUrl + "/order-service/api/orders",
                 HttpMethod.PUT,
                 updateRequest,
                 String.class
@@ -430,7 +430,7 @@ public class ECommerceShoppingFlowE2ETest {
         // Verify update
         HttpEntity<Void> finalOrderRequest = new HttpEntity<>(headers);
         ResponseEntity<String> finalOrderResponse = restTemplate.exchange(
-                apiGatewayUrl + "/app/order-service/api/orders/" + orderId,
+                apiGatewayUrl + "/order-service/api/orders/" + orderId,
                 HttpMethod.GET,
                 finalOrderRequest,
                 String.class
