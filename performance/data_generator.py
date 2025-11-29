@@ -57,11 +57,17 @@ class DataGenerator:
             "firstName": self.fake.first_name(),
             "lastName": self.fake.last_name(),
             "email": self.generate_unique_email(),
-            "username": self.generate_unique_username(),
-            "password": "TestPass123!",
             "phone": self.fake.phone_number()[:15],  # Limit phone length
             "imageUrl": f"https://picsum.photos/200/200?random={random.randint(1, 1000)}",
-            "credentialType": "EMAIL"
+            "credential": {
+                "username": self.generate_unique_username(),
+                "password": "TestPass123!",
+                "roleBasedAuthority": "ROLE_USER",
+                "isEnabled": True,
+                "isAccountNonExpired": True,
+                "isAccountNonLocked": True,
+                "isCredentialsNonExpired": True
+            }
         }
     
     def generate_product_data(self):
