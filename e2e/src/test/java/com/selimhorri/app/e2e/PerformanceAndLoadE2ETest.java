@@ -186,7 +186,7 @@ public class PerformanceAndLoadE2ETest {
             try {
                 ResponseEntity<Map> response = postWithJwt(
                         baseUrl + "/user-service/api/users",
-                        createJsonEntity(userRequest),
+                        userRequest,
                         Map.class
                 );
                 
@@ -233,7 +233,7 @@ public class PerformanceAndLoadE2ETest {
         Map<String, Object> testUser = createUserRequest("StressTestUser");
         ResponseEntity<Map> userResponse = postWithJwt(
                 baseUrl + "/user-service/api/users",
-                createJsonEntity(testUser),
+                testUser,
                 Map.class
         );
         
@@ -282,7 +282,7 @@ public class PerformanceAndLoadE2ETest {
                 
                 ResponseEntity<Map> writeResponse = postWithJwt(
                         baseUrl + "/order-service/api/carts",
-                        createJsonEntity(cartRequest),
+                        cartRequest,
                         Map.class
                 );
                 
@@ -541,7 +541,7 @@ public class PerformanceAndLoadE2ETest {
                 Map<String, Object> userRequest = createUserRequest("BenchUser" + i);
                 ResponseEntity<Map> createResponse = postWithJwt(
                         baseUrl + "/user-service/api/users",
-                        createJsonEntity(userRequest),
+                        userRequest,
                         Map.class
                 );
                 
@@ -610,7 +610,7 @@ public class PerformanceAndLoadE2ETest {
         Map<String, Object> userRequest = createUserRequest("OrderBenchUser");
         ResponseEntity<Map> userResponse = postWithJwt(
                 baseUrl + "/user-service/api/users",
-                createJsonEntity(userRequest),
+                userRequest,
                 Map.class
         );
         
@@ -631,7 +631,7 @@ public class PerformanceAndLoadE2ETest {
                 
                 ResponseEntity<Map> cartResponse = postWithJwt(
                         baseUrl + "/order-service/api/carts",
-                        createJsonEntity(cartRequest),
+                        cartRequest,
                         Map.class
                 );
                 
@@ -647,7 +647,7 @@ public class PerformanceAndLoadE2ETest {
                     
                     ResponseEntity<Map> orderResponse = postWithJwt(
                             baseUrl + "/order-service/api/orders",
-                            createJsonEntity(orderRequest),
+                            orderRequest,
                             Map.class
                     );
                     
@@ -760,3 +760,6 @@ public class PerformanceAndLoadE2ETest {
         }
     }
 }
+
+
+
