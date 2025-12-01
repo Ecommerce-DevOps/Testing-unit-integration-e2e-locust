@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="4.076" tests="8" errors="0" skipped="4" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.selimhorri.app.e2e.UserRegistrationFlowE2ETest" time="0.974" tests="3" errors="0" skipped="1" failures="0">
   <properties>
     <property name="order.service.url" value="http://localhost:8300"/>
     <property name="java.specification.version" value="17"/>
@@ -62,122 +62,54 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="" classname="com.selimhorri.app.e2e.ECommerceShoppingFlowE2ETest" time="0">
-    <skipped message="Requires inter-service communication through Eureka discovery - enable when discovery is fully operational"/>
-  </testcase>
-  <testcase name="testInvalidDataHandling" classname="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="0">
-    <skipped message="Server accepts empty fields - validation not implemented in user-service"/>
-  </testcase>
-  <testcase name="testResourceNotFoundHandling" classname="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="1.414">
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:9090
-🔍 Testing Resource Not Found Handling
-23:59:03.621 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/user-service/api/users/999999
-23:59:03.629 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:03.634 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [null] as "application/json"
-23:59:04.115 [main] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-23:59:04.123 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Non-existent user returns error status
-23:59:04.177 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/product-service/api/products/999999
-23:59:04.177 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:04.177 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [null] as "application/json"
-23:59:04.351 [main] DEBUG org.springframework.web.client.RestTemplate - Response 400 BAD_REQUEST
-23:59:04.352 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Non-existent product returns error status
-23:59:04.359 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/order-service/api/carts/999999
-23:59:04.359 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:04.359 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [null] as "application/json"
-23:59:04.541 [main] DEBUG org.springframework.web.client.RestTemplate - Response 400 BAD_REQUEST
-23:59:04.541 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Non-existent cart returns error status
-23:59:04.545 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/order-service/api/orders/999999
-23:59:04.548 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:04.548 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [null] as "application/json"
-23:59:04.689 [main] DEBUG org.springframework.web.client.RestTemplate - Response 400 BAD_REQUEST
-23:59:04.692 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Non-existent order returns error status
+  <testcase name="testCompleteUserRegistrationFlow" classname="com.selimhorri.app.e2e.UserRegistrationFlowE2ETest" time="0.625">
+    <system-out><![CDATA[🚀 Starting Complete User Registration Flow Test
+📝 Step 1: User Registration
+23:59:08.370 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
+23:59:08.370 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+23:59:08.375 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{firstName=E2ETest4a60ce40, lastName=User, credential={password=E2ETest123!, isAccountNonExpired=true, isCredentialsNonExpired=true, isEnabled=true, isAccountNonLocked=true, roleBasedAuthority=ROLE_USER, username=e2etest4a60ce40}, phone=+15554a60ce4, imageUrl=https://example.com/e2e.jpg, email=e2etest4a60ce40@example.com}] as "application/json"
+23:59:08.529 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:08.529 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+✅ User registered successfully with ID: 610
+🔍 Step 2: User Retrieval Verification
+23:59:08.536 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/user-service/api/users/610
+23:59:08.536 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+23:59:08.673 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:08.675 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+✅ User retrieval verified successfully
+📝 Step 3: User Profile Update
+23:59:08.675 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP PUT http://localhost:9090/user-service/api/users
+23:59:08.675 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+23:59:08.675 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{firstName=Updated4a60ce40, lastName=UpdatedUser, credential={password=E2ETest123!, isAccountNonExpired=true, isCredentialsNonExpired=true, isEnabled=true, isAccountNonLocked=true, roleBasedAuthority=ROLE_USER, username=e2etest4a60ce40}, phone=+19994a60ce4, imageUrl=https://example.com/updated_avatar.jpg, userId=610, email=e2etest4a60ce40@example.com}] as "application/json"
+23:59:08.843 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:08.844 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+🔍 Step 4: Update Verification
+23:59:08.847 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/user-service/api/users/610
+23:59:08.848 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+23:59:08.988 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:08.988 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+✅ User profile update verified successfully
+🎉 Complete User Registration Flow Test PASSED!
+   User ID: 610
 ]]></system-out>
   </testcase>
-  <testcase name="testBusinessLogicValidation" classname="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="1.36">
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:9090
-💼 Testing Business Logic Validation
-23:59:04.702 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
-23:59:04.705 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:04.705 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BusinessLogicUser","lastName":"TestUser","credential":{"password":"ErrorTest123!","roleBasedAuthority":"ROLE_USER","username":"businesslogicusere1c1f29c"},"phone":"+1555e1c1f29","imageUrl":"https://example.com/error.jpg","email":"businesslogicusere1c1f29c@errortest.com"}] as "application/json"
-23:59:05.101 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-23:59:05.101 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-23:59:05.112 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/order-service/api/orders
-23:59:05.112 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:05.113 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"orderFee":25.0,"orderDate":"30-11-2025__23:59:05:106947","orderDesc":"Order without cart","cart":{"cartId":999999}}] as "application/json"
-23:59:05.313 [main] DEBUG org.springframework.web.client.RestTemplate - Response 500 INTERNAL_SERVER_ERROR
-23:59:05.314 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Order with non-existent cart properly rejected
-23:59:05.314 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
-23:59:05.315 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:05.315 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BusinessLogicUser","lastName":"TestUser","credential":{"password":"ErrorTest123!","roleBasedAuthority":"ROLE_USER","username":"businesslogicusere1c1f29c"},"phone":"+1555e1c1f29","imageUrl":"https://example.com/error.jpg","email":"businesslogicusere1c1f29c@errortest.com"}] as "application/json"
-23:59:05.493 [main] DEBUG org.springframework.web.client.RestTemplate - Response 409 CONFLICT
-23:59:05.494 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Duplicate user registration properly rejected
-23:59:05.498 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/order-service/api/carts
-23:59:05.498 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:05.498 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"userId":604}] as "application/json"
-23:59:05.652 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-23:59:05.653 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-23:59:05.654 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/order-service/api/orders
-23:59:05.654 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:05.654 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"orderFee":-10.0,"orderDate":"30-11-2025__23:59:05:653150","orderDesc":"Order with negative fee","cart":{"cartId":194}}] as "application/json"
-23:59:06.051 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-23:59:06.051 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-⚠️ Negative order fee allowed - consider adding validation
+  <testcase name="testDuplicateUserRegistrationPrevention" classname="com.selimhorri.app.e2e.UserRegistrationFlowE2ETest" time="0.347">
+    <system-out><![CDATA[🛡️ Testing Duplicate Registration Prevention
+23:59:09.004 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
+23:59:09.004 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+23:59:09.004 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{firstName=E2ETestaa8c039f, lastName=User, credential={password=E2ETest123!, isAccountNonExpired=true, isCredentialsNonExpired=true, isEnabled=true, isAccountNonLocked=true, roleBasedAuthority=ROLE_USER, username=e2etestaa8c039f}, phone=+1555aa8c039, imageUrl=https://example.com/e2e.jpg, email=e2etestaa8c039f@example.com}] as "application/json"
+23:59:09.164 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:09.164 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String] as "application/json"
+✅ First registration successful
+23:59:09.164 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
+23:59:09.164 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[text/plain, application/json, application/*+json, */*]
+23:59:09.164 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{firstName=E2ETestaa8c039f, lastName=User, credential={password=E2ETest123!, isAccountNonExpired=true, isCredentialsNonExpired=true, isEnabled=true, isAccountNonLocked=true, roleBasedAuthority=ROLE_USER, username=e2etestaa8c039f}, phone=+1555aa8c039, imageUrl=https://example.com/e2e.jpg, email=e2etestaa8c039f@example.com}] as "application/json"
+23:59:09.329 [main] DEBUG org.springframework.web.client.RestTemplate - Response 409 CONFLICT
+✅ Duplicate registration properly rejected: 409 CONFLICT
+🎉 Duplicate Registration Prevention Test PASSED!
 ]]></system-out>
   </testcase>
-  <testcase name="testConcurrentModificationHandling" classname="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="0.683">
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:9090
-🔄 Testing Concurrent Modification Handling
-23:59:06.073 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
-23:59:06.075 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:06.075 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"ConcurrentUser","lastName":"TestUser","credential":{"password":"ErrorTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser0ef5f9a0"},"phone":"+15550ef5f9a","imageUrl":"https://example.com/error.jpg","email":"concurrentuser0ef5f9a0@errortest.com"}] as "application/json"
-23:59:06.230 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-23:59:06.230 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-23:59:06.240 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/product-service/api/products
-23:59:06.240 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:06.240 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"ConcurrentProduct","priceUnit":94.04,"quantity":16,"imageUrl":"https://example.com/errorproduct.jpg","sku":"ERROR102699A2","category":{"categoryId":3}}] as "application/json"
-23:59:06.404 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-23:59:06.405 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-23:59:06.405 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP PUT http://localhost:9090/user-service/api/users
-23:59:06.405 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:06.405 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"UpdatedFirstName1","lastName":"UpdatedLastName1","credential":{"password":"ErrorTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser0ef5f9a0"},"userId":606,"email":"concurrentuser0ef5f9a0@errortest.com"}] as "application/json"
-23:59:06.560 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-23:59:06.560 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-23:59:06.567 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP PUT http://localhost:9090/user-service/api/users
-23:59:06.567 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:06.567 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"UpdatedFirstName2","lastName":"UpdatedLastName2","credential":{"password":"ErrorTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser0ef5f9a0"},"userId":606,"email":"concurrentuser0ef5f9a0@errortest.com"}] as "application/json"
-23:59:06.726 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-23:59:06.727 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Concurrent modification handling tested
-]]></system-out>
-  </testcase>
-  <testcase name="testSystemBoundariesAndLimits" classname="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="0">
-    <skipped message="Boundary validation not implemented in services"/>
-  </testcase>
-  <testcase name="testTimeoutAndResponseTimeHandling" classname="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="0">
-    <skipped message="Test expects List response but API returns wrapped object"/>
-  </testcase>
-  <testcase name="testErrorResponseFormats" classname="com.selimhorri.app.e2e.ErrorHandlingAndResilienceE2ETest" time="0.59">
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:9090
-📝 Testing Error Response Formats
-23:59:06.770 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/user-service/api/users/999999
-23:59:06.772 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:06.772 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [null] as "application/json"
-23:59:07.175 [main] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-23:59:07.177 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-404 Error response body: {timestamp=01-12-2025__04:59:06:924775, httpStatus=NOT_FOUND, msg=#### User with id: 999999 not found! ####}
-23:59:07.179 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
-23:59:07.179 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-23:59:07.179 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"invalid":"data"}] as "application/json"
-23:59:07.331 [main] DEBUG org.springframework.web.client.RestTemplate - Response 400 BAD_REQUEST
-23:59:07.331 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-Bad request error response: {timestamp=2025-12-01T04:59:07.079+00:00, status=400, error=Bad Request, path=/user-service/api/users}
-✅ Error response formats verified
-]]></system-out>
+  <testcase name="testUserDataValidation" classname="com.selimhorri.app.e2e.UserRegistrationFlowE2ETest" time="0">
+    <skipped message="Server accepts incomplete user data - validation not implemented"/>
   </testcase>
 </testsuite>

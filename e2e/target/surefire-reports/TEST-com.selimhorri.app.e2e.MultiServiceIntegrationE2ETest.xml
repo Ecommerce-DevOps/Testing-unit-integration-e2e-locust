@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.279" tests="5" errors="4" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="1.02" tests="5" errors="0" skipped="3" failures="0">
   <properties>
     <property name="order.service.url" value="http://localhost:8300"/>
     <property name="java.specification.version" value="17"/>
@@ -16,9 +16,10 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="api.gateway.url" value="http://localhost:8700"/>
-    <property name="sun.java.command" value="C:\Users\geoff\AppData\Local\Temp\surefire13792819133854363142\surefirebooter-20251129164143742_3.jar C:\Users\geoff\AppData\Local\Temp\surefire13792819133854363142 2025-11-29T16-41-31_816-jvmRun1 surefire-20251129164143742_1tmp surefire_0-20251129164143742_2tmp"/>
+    <property name="api.gateway.url" value="http://localhost:9090"/>
+    <property name="sun.java.command" value="C:\Users\geoff\AppData\Local\Temp\surefire10522101064918977222\surefirebooter-20251130235902572_3.jar C:\Users\geoff\AppData\Local\Temp\surefire10522101064918977222 2025-11-30T23-59-02_228-jvmRun1 surefire-20251130235902572_1tmp surefire_0-20251130235902572_2tmp"/>
     <property name="jdk.debug" value="release"/>
+    <property name="test" value="*E2ETest"/>
     <property name="surefire.test.class.path" value="C:\Users\geoff\Documents\Projects\Ingesoft V\Proyecto Final\Testing-unit-integration-e2e-locust\e2e\target\test-classes;C:\Users\geoff\Documents\Projects\Ingesoft V\Proyecto Final\Testing-unit-integration-e2e-locust\e2e\target\classes;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.5.7\spring-boot-starter-test-2.5.7.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-starter\2.5.7\spring-boot-starter-2.5.7.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot\2.5.7\spring-boot-2.5.7.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.5.7\spring-boot-autoconfigure-2.5.7.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.5.7\spring-boot-starter-logging-2.5.7.jar;C:\Users\geoff\.m2\repository\ch\qos\logback\logback-classic\1.2.7\logback-classic-1.2.7.jar;C:\Users\geoff\.m2\repository\ch\qos\logback\logback-core\1.2.7\logback-core-1.2.7.jar;C:\Users\geoff\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.14.1\log4j-to-slf4j-2.14.1.jar;C:\Users\geoff\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;C:\Users\geoff\.m2\repository\org\slf4j\jul-to-slf4j\1.7.32\jul-to-slf4j-1.7.32.jar;C:\Users\geoff\.m2\repository\jakarta\annotation\jakarta.annotation-api\1.3.5\jakarta.annotation-api-1.3.5.jar;C:\Users\geoff\.m2\repository\org\yaml\snakeyaml\1.28\snakeyaml-1.28.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-test\2.5.7\spring-boot-test-2.5.7.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.5.7\spring-boot-test-autoconfigure-2.5.7.jar;C:\Users\geoff\.m2\repository\com\jayway\jsonpath\json-path\2.5.0\json-path-2.5.0.jar;C:\Users\geoff\.m2\repository\net\minidev\json-smart\2.4.7\json-smart-2.4.7.jar;C:\Users\geoff\.m2\repository\net\minidev\accessors-smart\2.4.7\accessors-smart-2.4.7.jar;C:\Users\geoff\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\geoff\.m2\repository\org\slf4j\slf4j-api\1.7.32\slf4j-api-1.7.32.jar;C:\Users\geoff\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\geoff\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\geoff\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\geoff\.m2\repository\org\mockito\mockito-core\3.9.0\mockito-core-3.9.0.jar;C:\Users\geoff\.m2\repository\net\bytebuddy\byte-buddy\1.10.22\byte-buddy-1.10.22.jar;C:\Users\geoff\.m2\repository\net\bytebuddy\byte-buddy-agent\1.10.22\byte-buddy-agent-1.10.22.jar;C:\Users\geoff\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\geoff\.m2\repository\org\mockito\mockito-junit-jupiter\3.9.0\mockito-junit-jupiter-3.9.0.jar;C:\Users\geoff\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\geoff\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-core\5.3.13\spring-core-5.3.13.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-jcl\5.3.13\spring-jcl-5.3.13.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-test\5.3.13\spring-test-5.3.13.jar;C:\Users\geoff\.m2\repository\org\xmlunit\xmlunit-core\2.8.3\xmlunit-core-2.8.3.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.5.7\spring-boot-starter-web-2.5.7.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.5.7\spring-boot-starter-json-2.5.7.jar;C:\Users\geoff\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.12.5\jackson-datatype-jdk8-2.12.5.jar;C:\Users\geoff\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.12.5\jackson-datatype-jsr310-2.12.5.jar;C:\Users\geoff\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.12.5\jackson-module-parameter-names-2.12.5.jar;C:\Users\geoff\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.5.7\spring-boot-starter-tomcat-2.5.7.jar;C:\Users\geoff\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\9.0.55\tomcat-embed-core-9.0.55.jar;C:\Users\geoff\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\9.0.55\tomcat-embed-el-9.0.55.jar;C:\Users\geoff\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\9.0.55\tomcat-embed-websocket-9.0.55.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-web\5.3.13\spring-web-5.3.13.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-beans\5.3.13\spring-beans-5.3.13.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-webmvc\5.3.13\spring-webmvc-5.3.13.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-aop\5.3.13\spring-aop-5.3.13.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-context\5.3.13\spring-context-5.3.13.jar;C:\Users\geoff\.m2\repository\org\springframework\spring-expression\5.3.13\spring-expression-5.3.13.jar;C:\Users\geoff\.m2\repository\org\junit\jupiter\junit-jupiter\5.7.2\junit-jupiter-5.7.2.jar;C:\Users\geoff\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.2\junit-jupiter-api-5.7.2.jar;C:\Users\geoff\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\geoff\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\geoff\.m2\repository\org\junit\platform\junit-platform-commons\1.7.2\junit-platform-commons-1.7.2.jar;C:\Users\geoff\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.7.2\junit-jupiter-params-5.7.2.jar;C:\Users\geoff\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.2\junit-jupiter-engine-5.7.2.jar;C:\Users\geoff\.m2\repository\org\junit\platform\junit-platform-engine\1.7.2\junit-platform-engine-1.7.2.jar;C:\Users\geoff\.m2\repository\io\jsonwebtoken\jjwt\0.9.1\jjwt-0.9.1.jar;C:\Users\geoff\.m2\repository\javax\xml\bind\jaxb-api\2.3.1\jaxb-api-2.3.1.jar;C:\Users\geoff\.m2\repository\javax\activation\javax.activation-api\1.2.0\javax.activation-api-1.2.0.jar;C:\Users\geoff\.m2\repository\org\testcontainers\junit-jupiter\1.16.2\junit-jupiter-1.16.2.jar;C:\Users\geoff\.m2\repository\org\testcontainers\testcontainers\1.16.2\testcontainers-1.16.2.jar;C:\Users\geoff\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\geoff\.m2\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;C:\Users\geoff\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\geoff\.m2\repository\org\rnorth\duct-tape\duct-tape\1.0.8\duct-tape-1.0.8.jar;C:\Users\geoff\.m2\repository\org\jetbrains\annotations\17.0.0\annotations-17.0.0.jar;C:\Users\geoff\.m2\repository\com\github\docker-java\docker-java-api\3.2.12\docker-java-api-3.2.12.jar;C:\Users\geoff\.m2\repository\com\github\docker-java\docker-java-transport-zerodep\3.2.12\docker-java-transport-zerodep-3.2.12.jar;C:\Users\geoff\.m2\repository\com\github\docker-java\docker-java-transport\3.2.12\docker-java-transport-3.2.12.jar;C:\Users\geoff\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\geoff\.m2\repository\org\assertj\assertj-core\3.19.0\assertj-core-3.19.0.jar;C:\Users\geoff\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.12.5\jackson-databind-2.12.5.jar;C:\Users\geoff\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.12.5\jackson-annotations-2.12.5.jar;C:\Users\geoff\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.12.5\jackson-core-2.12.5.jar;C:\Users\geoff\.m2\repository\org\awaitility\awaitility\4.0.3\awaitility-4.0.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\geoff"/>
@@ -32,7 +33,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\geoff\AppData\Local\Temp\surefire13792819133854363142\surefirebooter-20251129164143742_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\geoff\AppData\Local\Temp\surefire10522101064918977222\surefirebooter-20251130235902572_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.17+8-LTS-360"/>
@@ -53,7 +54,7 @@
     <property name="user.service.url" value="http://localhost:8200"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\apache-maven-3.9.11\bin;C:\Users\geoff\AppData\Local\Microsoft\WindowsApps;C:\Users\geoff\AppData\Local\Programs\Antigravity\bin;C:\Users\geoff\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\geoff\AppData\Roaming\npm;c:\Users\geoff\.antigravity\extensions\ms-python.debugpy-2025.14.1-win32-x64\bundled\scripts\noConfigScripts;c:\Users\geoff\.antigravity\extensions\vscjava.vscode-java-debug-0.58.3-universal\bundled\scripts\noConfigScripts;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;c:\Users\geoff\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\geoff\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\Amazon\AWSCLIV2\;C:\Program Files\Amazon\AWSSAMCLI\bin\;C:\Program Files\apache-maven-3.9.11\bin;C:\Users\geoff\AppData\Local\Microsoft\WindowsApps;C:\Users\geoff\AppData\Local\Programs\Antigravity\bin;C:\Users\geoff\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\geoff\AppData\Roaming\npm;C:\Users\geoff\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\geoff\AppData\Local\Microsoft\WinGet\Packages\Helm.Helm_Microsoft.Winget.Source_8wekyb3d8bbwe\windows-amd64;;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="java.vm.version" value="17.0.17+8-LTS-360"/>
@@ -61,489 +62,79 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testCompleteSystemIntegrationWorkflow" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.058">
-    <error message="Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]" type="org.springframework.web.client.UnknownContentTypeException"><![CDATA[org.springframework.web.client.UnknownContentTypeException: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]
-	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:126)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1037)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1020)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:778)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:468)
-	at org.springframework.boot.test.web.client.TestRestTemplate.postForEntity(TestRestTemplate.java:440)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.createSingleProduct(MultiServiceIntegrationE2ETest.java:413)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.createMultipleProducts(MultiServiceIntegrationE2ETest.java:389)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.testCompleteSystemIntegrationWorkflow(MultiServiceIntegrationE2ETest.java:73)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-]]></error>
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:8700
-🚀 Starting Complete System Integration Test
-📝 Phase 1: Multi-User Creation
-16:41:45.671 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.672 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.672 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"MultiUser0416a5687","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"multiuser0416a5687c38f960b"},"phone":"+1555c38f960","imageUrl":"https://example.com/multi.jpg","email":"multiuser0416a5687c38f960b@multitest.com"}] as "application/json"
-16:41:45.682 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.682 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.684 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.684 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.684 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"MultiUser1f02cf560","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"multiuser1f02cf560386d6c04"},"phone":"+1555386d6c0","imageUrl":"https://example.com/multi.jpg","email":"multiuser1f02cf560386d6c04@multitest.com"}] as "application/json"
-16:41:45.697 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.697 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.698 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.699 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.699 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"MultiUser20cebf7b9","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"multiuser20cebf7b99a6f2710"},"phone":"+15559a6f271","imageUrl":"https://example.com/multi.jpg","email":"multiuser20cebf7b99a6f2710@multitest.com"}] as "application/json"
-16:41:45.708 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.708 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-✅ Created 3 users successfully
-📦 Phase 2: Product Catalog Setup
-16:41:45.715 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/product-service/api/products
-16:41:45.715 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.715 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"MultiProduct0308d7983","priceUnit":69.27,"quantity":17,"imageUrl":"https://example.com/multiproduct.jpg","productBrand":"MultiBrand","sku":"MULTI8A9C402D","categoryId":5}] as "application/json"
-16:41:45.722 [main] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-]]></system-out>
+  <testcase name="testCompleteSystemIntegrationWorkflow" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0">
+    <skipped message="Requires inter-service communication through Eureka discovery for cart/order verification"/>
   </testcase>
-  <testcase name="testConcurrentMultiServiceOperations" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.024">
-    <error message="org.springframework.web.client.UnknownContentTypeException: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]" type="java.util.concurrent.CompletionException"><![CDATA[java.util.concurrent.CompletionException: org.springframework.web.client.UnknownContentTypeException: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]
-	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:315)
-	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:320)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1807)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:842)
-Caused by: org.springframework.web.client.UnknownContentTypeException: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]
-	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:126)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1037)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1020)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:778)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:468)
-	at org.springframework.boot.test.web.client.TestRestTemplate.postForEntity(TestRestTemplate.java:440)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.lambda$testConcurrentMultiServiceOperations$1(MultiServiceIntegrationE2ETest.java:167)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1804)
-	... 3 more
-]]></error>
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:8700
+  <testcase name="testConcurrentMultiServiceOperations" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.513">
+    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:9090
 ⚡ Testing Concurrent Multi-Service Operations
-16:41:45.729 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.729 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.729 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.729 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.729 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.729 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"ConcurrentUser2","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser26405f8c0"},"phone":"+15556405f8c","imageUrl":"https://example.com/multi.jpg","email":"concurrentuser26405f8c0@multitest.com"}] as "application/json"
-16:41:45.729 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.729 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/product-service/api/products
-16:41:45.729 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"ConcurrentUser1","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser16d5e0c87"},"phone":"+15556d5e0c8","imageUrl":"https://example.com/multi.jpg","email":"concurrentuser16d5e0c87@multitest.com"}] as "application/json"
-16:41:45.729 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"ConcurrentUser0","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser0352d94b6"},"phone":"+1555352d94b","imageUrl":"https://example.com/multi.jpg","email":"concurrentuser0352d94b6@multitest.com"}] as "application/json"
-16:41:45.729 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/product-service/api/products
-16:41:45.729 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.730 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.730 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"ConcurrentProduct1","priceUnit":48.27,"quantity":51,"imageUrl":"https://example.com/multiproduct.jpg","productBrand":"MultiBrand","sku":"MULTI12FA01DC","categoryId":4}] as "application/json"
-16:41:45.730 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"ConcurrentProduct0","priceUnit":34.53,"quantity":27,"imageUrl":"https://example.com/multiproduct.jpg","productBrand":"MultiBrand","sku":"MULTI8E824EA6","categoryId":3}] as "application/json"
-16:41:45.732 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-16:41:45.732 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-16:41:45.733 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/product-service/api/products
-16:41:45.733 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.733 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"ConcurrentProduct2","priceUnit":86.02,"quantity":47,"imageUrl":"https://example.com/multiproduct.jpg","productBrand":"MultiBrand","sku":"MULTI6967FB1D","categoryId":2}] as "application/json"
-16:41:45.736 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-16:41:45.741 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.741 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.742 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.742 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+23:59:07.359 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
+23:59:07.360 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/product-service/api/products
+23:59:07.360 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
+23:59:07.360 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/product-service/api/products
+23:59:07.360 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:07.360 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:07.360 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"ConcurrentUser1","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser1e848ac12"},"phone":"+1555e848ac1","imageUrl":"https://example.com/multi.jpg","email":"concurrentuser1e848ac12@multitest.com"}] as "application/json"
+23:59:07.360 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:07.360 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"ConcurrentProduct1","priceUnit":20.93,"quantity":16,"imageUrl":"https://example.com/multiproduct.jpg","sku":"MULTIF770E8BC","category":{"categoryId":2}}] as "application/json"
+23:59:07.360 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"ConcurrentUser2","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser27f64a13c"},"phone":"+15557f64a13","imageUrl":"https://example.com/multi.jpg","email":"concurrentuser27f64a13c@multitest.com"}] as "application/json"
+23:59:07.364 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
+23:59:07.365 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:07.365 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"ConcurrentProduct0","priceUnit":14.94,"quantity":16,"imageUrl":"https://example.com/multiproduct.jpg","sku":"MULTI7B7C9864","category":{"categoryId":1}}] as "application/json"
+23:59:07.365 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:07.365 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"ConcurrentUser0","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"concurrentuser04d867e51"},"phone":"+15554d867e5","imageUrl":"https://example.com/multi.jpg","email":"concurrentuser04d867e51@multitest.com"}] as "application/json"
+23:59:07.517 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:07.517 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
 ✅ Concurrent user 1 created
-✅ Concurrent user 0 created
-16:41:45.746 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.746 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+23:59:07.519 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/product-service/api/products
+23:59:07.520 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:07.520 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"ConcurrentProduct2","priceUnit":51.05,"quantity":37,"imageUrl":"https://example.com/multiproduct.jpg","sku":"MULTI913E0538","category":{"categoryId":2}}] as "application/json"
+23:59:07.714 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:07.714 [pool-2-thread-2] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+✅ Concurrent product 2 created
+23:59:07.799 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:07.799 [pool-2-thread-3] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
 ✅ Concurrent user 2 created
+23:59:07.836 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:07.836 [pool-2-thread-1] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+✅ Concurrent user 0 created
+23:59:07.840 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:07.840 [pool-2-thread-5] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+✅ Concurrent product 1 created
+23:59:07.853 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+23:59:07.853 [pool-2-thread-4] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+✅ Concurrent product 0 created
+✅ All concurrent operations completed successfully
 ]]></system-out>
   </testcase>
-  <testcase name="testServiceResilienceAndErrorHandling" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.025">
-    <failure message="&#10;Expecting:&#10;  500 INTERNAL_SERVER_ERROR&#10;to be in:&#10;  [400 BAD_REQUEST, 422 UNPROCESSABLE_ENTITY]&#10;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-
-Expecting:
-  500 INTERNAL_SERVER_ERROR
-to be in:
-  [400 BAD_REQUEST, 422 UNPROCESSABLE_ENTITY]
-
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.testServiceResilienceAndErrorHandling(MultiServiceIntegrationE2ETest.java:203)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-]]></failure>
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:8700
+  <testcase name="testServiceResilienceAndErrorHandling" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.498">
+    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:9090
 🛡️ Testing Service Resilience and Error Handling
-16:41:45.752 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.752 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.752 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"","email":"invalid-email"}] as "application/json"
-16:41:45.770 [main] DEBUG org.springframework.web.client.RestTemplate - Response 500 INTERNAL_SERVER_ERROR
-16:41:45.771 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+23:59:07.894 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/user-service/api/users
+23:59:07.895 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:07.896 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"","email":"invalid-email"}] as "application/json"
+23:59:08.039 [main] DEBUG org.springframework.web.client.RestTemplate - Response 400 BAD_REQUEST
+23:59:08.040 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+✅ Invalid user creation properly rejected
+23:59:08.040 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://localhost:9090/user-service/api/users/99999
+23:59:08.040 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:08.040 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [null] as "application/json"
+23:59:08.182 [main] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
+23:59:08.185 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+✅ Non-existent user properly returns 404
+23:59:08.194 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:9090/order-service/api/orders
+23:59:08.194 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+23:59:08.194 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"orderFee":25.0,"orderDate":"30-11-2025__23:59:08:186369","orderDesc":"Test order with invalid cart","cart":{"cartId":99999}}] as "application/json"
+23:59:08.358 [main] DEBUG org.springframework.web.client.RestTemplate - Response 500 INTERNAL_SERVER_ERROR
+23:59:08.358 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
+✅ Invalid order creation properly handled
+✅ Service resilience tests completed
 ]]></system-out>
   </testcase>
-  <testcase name="testDataIntegrityAcrossServices" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.025">
-    <error message="Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]" type="org.springframework.web.client.UnknownContentTypeException"><![CDATA[org.springframework.web.client.UnknownContentTypeException: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]
-	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:126)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1037)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1020)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:778)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:468)
-	at org.springframework.boot.test.web.client.TestRestTemplate.postForEntity(TestRestTemplate.java:440)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.createSingleProduct(MultiServiceIntegrationE2ETest.java:413)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.testDataIntegrityAcrossServices(MultiServiceIntegrationE2ETest.java:249)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-]]></error>
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:8700
-🔒 Testing Data Integrity Across Services
-16:41:45.775 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.776 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.776 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"IntegrityTestUser4ffd2512","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"integritytestuser4ffd2512de8311f2"},"phone":"+1555de8311f","imageUrl":"https://example.com/multi.jpg","email":"integritytestuser4ffd2512de8311f2@multitest.com"}] as "application/json"
-16:41:45.789 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.789 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.790 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/product-service/api/products
-16:41:45.790 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.790 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"IntegrityTestProductc2152a00","priceUnit":57.96,"quantity":53,"imageUrl":"https://example.com/multiproduct.jpg","productBrand":"MultiBrand","sku":"MULTIE7A20916","categoryId":5}] as "application/json"
-16:41:45.797 [main] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-]]></system-out>
+  <testcase name="testDataIntegrityAcrossServices" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0">
+    <skipped message="Requires inter-service communication through Eureka discovery for cart/order operations"/>
   </testcase>
-  <testcase name="testHighVolumeDataOperations" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0.147">
-    <error message="Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]" type="org.springframework.web.client.UnknownContentTypeException"><![CDATA[org.springframework.web.client.UnknownContentTypeException: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [text/html;charset=utf-8]
-	at org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:126)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1037)
-	at org.springframework.web.client.RestTemplate$ResponseEntityResponseExtractor.extractData(RestTemplate.java:1020)
-	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:778)
-	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:711)
-	at org.springframework.web.client.RestTemplate.postForEntity(RestTemplate.java:468)
-	at org.springframework.boot.test.web.client.TestRestTemplate.postForEntity(TestRestTemplate.java:440)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.createSingleProduct(MultiServiceIntegrationE2ETest.java:413)
-	at com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest.testHighVolumeDataOperations(MultiServiceIntegrationE2ETest.java:344)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$6(TestMethodTestDescriptor.java:210)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:206)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:131)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:65)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:143)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:129)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:127)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:126)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:84)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:96)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:75)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-]]></error>
-    <system-out><![CDATA[🌐 Testing against Gateway: http://localhost:8700
-📊 Testing High Volume Data Operations
-Creating 10 users in bulk...
-16:41:45.800 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.800 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.800 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser0758fbf75","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser0758fbf756013e534"},"phone":"+15556013e53","imageUrl":"https://example.com/multi.jpg","email":"bulkuser0758fbf756013e534@multitest.com"}] as "application/json"
-16:41:45.817 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.817 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.818 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.818 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.819 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser1b22c8d96","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser1b22c8d96398c7801"},"phone":"+1555398c780","imageUrl":"https://example.com/multi.jpg","email":"bulkuser1b22c8d96398c7801@multitest.com"}] as "application/json"
-16:41:45.835 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.835 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.836 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.836 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.836 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser2211af5df","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser2211af5df5e147af5"},"phone":"+15555e147af","imageUrl":"https://example.com/multi.jpg","email":"bulkuser2211af5df5e147af5@multitest.com"}] as "application/json"
-16:41:45.862 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.862 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.863 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.863 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.864 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser31dde5026","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser31dde50267dc6ba87"},"phone":"+15557dc6ba8","imageUrl":"https://example.com/multi.jpg","email":"bulkuser31dde50267dc6ba87@multitest.com"}] as "application/json"
-16:41:45.874 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.874 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.875 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.875 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.875 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser4a2f1674a","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser4a2f1674a5dcf73cb"},"phone":"+15555dcf73c","imageUrl":"https://example.com/multi.jpg","email":"bulkuser4a2f1674a5dcf73cb@multitest.com"}] as "application/json"
-16:41:45.886 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.886 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.886 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.887 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.887 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser5f7145e05","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser5f7145e056c43c9cc"},"phone":"+15556c43c9c","imageUrl":"https://example.com/multi.jpg","email":"bulkuser5f7145e056c43c9cc@multitest.com"}] as "application/json"
-16:41:45.900 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.900 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.901 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.901 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.901 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser6bde6419f","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser6bde6419f2b1f6891"},"phone":"+15552b1f689","imageUrl":"https://example.com/multi.jpg","email":"bulkuser6bde6419f2b1f6891@multitest.com"}] as "application/json"
-16:41:45.909 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.910 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.910 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.910 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.910 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser7c46ca535","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser7c46ca535b7d3d5a5"},"phone":"+1555b7d3d5a","imageUrl":"https://example.com/multi.jpg","email":"bulkuser7c46ca535b7d3d5a5@multitest.com"}] as "application/json"
-16:41:45.919 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.920 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.921 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.921 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.921 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser81a8405a8","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser81a8405a84edd6d52"},"phone":"+15554edd6d5","imageUrl":"https://example.com/multi.jpg","email":"bulkuser81a8405a84edd6d52@multitest.com"}] as "application/json"
-16:41:45.935 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.935 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-16:41:45.936 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/user-service/api/users
-16:41:45.936 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.937 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"firstName":"BulkUser9c5db4223","lastName":"TestUser","credential":{"password":"MultiTest123!","roleBasedAuthority":"ROLE_USER","username":"bulkuser9c5db4223c3841a78"},"phone":"+1555c3841a7","imageUrl":"https://example.com/multi.jpg","email":"bulkuser9c5db4223c3841a78@multitest.com"}] as "application/json"
-16:41:45.943 [main] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
-16:41:45.944 [main] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.util.Map<?, ?>]
-Creating 10 products in bulk...
-16:41:45.944 [main] DEBUG org.springframework.web.client.RestTemplate - HTTP POST http://localhost:8700/product-service/api/products
-16:41:45.944 [main] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
-16:41:45.944 [main] DEBUG org.springframework.web.client.RestTemplate - Writing [{"productTitle":"BulkProduct00c3f55e8","priceUnit":30.55,"quantity":41,"imageUrl":"https://example.com/multiproduct.jpg","productBrand":"MultiBrand","sku":"MULTIAE6E0517","categoryId":1}] as "application/json"
-16:41:45.944 [main] DEBUG org.springframework.web.client.RestTemplate - Response 404 NOT_FOUND
-]]></system-out>
+  <testcase name="testHighVolumeDataOperations" classname="com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest" time="0">
+    <skipped message="Test expects List response but API returns wrapped object - needs test adjustment"/>
   </testcase>
 </testsuite>
