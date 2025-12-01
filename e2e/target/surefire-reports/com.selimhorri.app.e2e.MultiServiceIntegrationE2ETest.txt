@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 1.02 s - in com.selimhorri.app.e2e.MultiServiceIntegrationE2ETest
